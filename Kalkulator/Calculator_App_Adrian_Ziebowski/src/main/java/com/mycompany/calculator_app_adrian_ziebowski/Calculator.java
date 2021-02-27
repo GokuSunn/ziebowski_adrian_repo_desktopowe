@@ -573,26 +573,26 @@ public class Calculator extends javax.swing.JFrame {
             case 1: 
                 
                 ans = num + Double.parseDouble(jTextField2.getText());
-                jLabel1.setText(jLabel1.getText()+d+" = "+Double.toString(ans));
-                jTextField2.setText(" ");
+                jLabel1.setText(jLabel1.getText()+d+" =");
+                jTextField2.setText(Double.toString(ans));
                 break;
         
             case 2:                 
                 ans = num - Double.parseDouble(jTextField2.getText());
-                jLabel1.setText(jLabel1.getText()+d+" = "+Double.toString(ans));
-                jTextField2.setText(" ");
+                jLabel1.setText(jLabel1.getText()+d+" =");
+                jTextField2.setText(Double.toString(ans));
                 break;
                 
             case 3:                
                 ans = num / Double.parseDouble(jTextField2.getText());
-                jLabel1.setText(jLabel1.getText()+d+" = "+Double.toString(ans));
-                jTextField2.setText(" ");
+                jLabel1.setText(jLabel1.getText()+d+" =");
+                jTextField2.setText(Double.toString(ans));
                 break;
                 
             case 4:                
                 ans = num * Double.parseDouble(jTextField2.getText());
-                jLabel1.setText(jLabel1.getText()+d+" = "+Double.toString(ans));
-                jTextField2.setText(" ");
+                jLabel1.setText(jLabel1.getText()+d+" =");
+                jTextField2.setText(Double.toString(ans));                
                 break;
         }
     }
