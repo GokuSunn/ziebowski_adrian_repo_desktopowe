@@ -20,6 +20,7 @@ public class NewJFrame extends javax.swing.JFrame {
     public NewJFrame() {        
         initComponents();
         addKeyListenerTojTFCoKupiles();
+        addKeyListenerToTFWartosc();
     }
 
     /**
@@ -265,18 +266,16 @@ public class NewJFrame extends javax.swing.JFrame {
     private void addKeyListenerToTFWartosc(){
         az_jTFWartosc.addKeyListener(new KeyListener() {
             @Override            
-            public void keyTyped(KeyEvent e) {                
+            public void keyTyped(KeyEvent e) {   
                 char ch = e.getKeyChar();
                 if(ch == '0' || ch == '1' || ch == '2' || ch == '3' || ch == '4' || ch == '5' || ch == '6' || ch == '7' || ch == '8' || ch == '9'){
-                    System.out.print("NACIŚNIĘTO CYFRĘ" +ch);
+                    System.out.println("NACIŚNIĘTO CYFRĘ "+ch);
                 }                
-            }
-
+            }            
             @Override
             public void keyPressed(KeyEvent e) {
-                //System.out.println("2 keyPressed"+e.getKeyChar());
+                
             }
-
             @Override
             public void keyReleased(KeyEvent e) {
                 //System.out.println("3 keyReleased"+e.getKeyChar());
