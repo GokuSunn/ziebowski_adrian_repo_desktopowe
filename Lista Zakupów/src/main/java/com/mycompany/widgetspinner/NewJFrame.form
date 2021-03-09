@@ -96,12 +96,12 @@
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="az_jTFCoKupiles" alignment="0" min="-2" pref="143" max="-2" attributes="0"/>
+                                      <Component id="jTFCoKupiles" alignment="0" min="-2" pref="143" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="az_jTFWartosc" alignment="0" min="-2" pref="129" max="-2" attributes="0"/>
+                                      <Component id="jTFWartosc" alignment="0" min="-2" pref="129" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -111,7 +111,7 @@
                                   <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jTextField3" min="-2" pref="102" max="-2" attributes="0"/>
+                                      <Component id="jTFData" min="-2" pref="102" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -132,9 +132,9 @@
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="az_jTFCoKupiles" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="az_jTFWartosc" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTFCoKupiles" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTFWartosc" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTFData" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
@@ -172,16 +172,16 @@
                 <Property name="text" type="java.lang.String" value="Wpisz co kupi&#x142;e&#x15b;"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="az_jTFCoKupiles">
+            <Component class="javax.swing.JTextField" name="jTFCoKupiles">
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel2">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Podaj warto&#x15b;&#x107;"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="az_jTFWartosc">
+            <Component class="javax.swing.JTextField" name="jTFWartosc">
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="az_jTFWartoscActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTFWartoscActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel3">
@@ -191,10 +191,10 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel4">
               <Properties>
-                <Property name="text" type="java.lang.String" value="jLabel4"/>
+                <Property name="text" type="java.lang.String" value="Data"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField3">
+            <Component class="javax.swing.JTextField" name="jTFData">
             </Component>
             <Component class="javax.swing.JComboBox" name="jComboBox1">
               <Properties>
@@ -242,7 +242,7 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTextArea" name="az_jTATodaysShopping">
+                <Component class="javax.swing.JTextArea" name="jTATodaysShopping">
                   <Properties>
                     <Property name="columns" type="int" value="20"/>
                     <Property name="rows" type="int" value="5"/>

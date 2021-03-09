@@ -35,12 +35,12 @@ public class NewJFrame extends javax.swing.JFrame {
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        az_jTFCoKupiles = new javax.swing.JTextField();
+        jTFCoKupiles = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        az_jTFWartosc = new javax.swing.JTextField();
+        jTFWartosc = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        jTFData = new javax.swing.JTextField();
         jComboBox1 = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
@@ -49,7 +49,7 @@ public class NewJFrame extends javax.swing.JFrame {
         jTextField5 = new javax.swing.JTextField();
         jTextField6 = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        az_jTATodaysShopping = new javax.swing.JTextArea();
+        jTATodaysShopping = new javax.swing.JTextArea();
         jPanel2 = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -63,15 +63,15 @@ public class NewJFrame extends javax.swing.JFrame {
 
         jLabel2.setText("Podaj wartość");
 
-        az_jTFWartosc.addActionListener(new java.awt.event.ActionListener() {
+        jTFWartosc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                az_jTFWartoscActionPerformed(evt);
+                jTFWartoscActionPerformed(evt);
             }
         });
 
         jLabel3.setText("Typ zakupionego towaru");
 
-        jLabel4.setText("jLabel4");
+        jLabel4.setText("Data");
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -83,9 +83,9 @@ public class NewJFrame extends javax.swing.JFrame {
 
         jLabel7.setText("Wydatki z tygodnia: ");
 
-        az_jTATodaysShopping.setColumns(20);
-        az_jTATodaysShopping.setRows(5);
-        jScrollPane1.setViewportView(az_jTATodaysShopping);
+        jTATodaysShopping.setColumns(20);
+        jTATodaysShopping.setRows(5);
+        jScrollPane1.setViewportView(jTATodaysShopping);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -112,11 +112,11 @@ public class NewJFrame extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabel1)
-                                .addComponent(az_jTFCoKupiles, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jTFCoKupiles, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGap(22, 22, 22)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabel2)
-                                .addComponent(az_jTFWartosc, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jTFWartosc, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGap(22, 22, 22)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -124,7 +124,7 @@ public class NewJFrame extends javax.swing.JFrame {
                             .addGap(38, 38, 38)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabel4)
-                                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(jTFData, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(23, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -138,9 +138,9 @@ public class NewJFrame extends javax.swing.JFrame {
                     .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(az_jTFCoKupiles, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(az_jTFWartosc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTFCoKupiles, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTFWartosc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTFData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(33, 33, 33)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -200,9 +200,9 @@ public class NewJFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void az_jTFWartoscActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_az_jTFWartoscActionPerformed
+    private void jTFWartoscActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFWartoscActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_az_jTFWartoscActionPerformed
+    }//GEN-LAST:event_jTFWartoscActionPerformed
 
     /**
      * @param args the command line arguments
@@ -240,13 +240,13 @@ public class NewJFrame extends javax.swing.JFrame {
     }
     
     private void addKeyListenerTojTFCoKupiles(){    
-        az_jTFCoKupiles.addKeyListener(new KeyListener() {
+        jTFCoKupiles.addKeyListener(new KeyListener() {
             @Override            
             public void keyTyped(KeyEvent e) {                
                 
                 if(e.getKeyChar()==KeyEvent.VK_ENTER){
                     System.out.print("Wprowadzono dane po naciśnięciu ENTERA");
-                    az_jTATodaysShopping.setText(az_jTFCoKupiles.getText());
+                    jTATodaysShopping.setText(jTFCoKupiles.getText());
                 }
                 System.out.println("1 keyTyped "+e.getKeyChar());
             }
@@ -264,13 +264,16 @@ public class NewJFrame extends javax.swing.JFrame {
     }
     
     private void addKeyListenerToTFWartosc(){
-        az_jTFWartosc.addKeyListener(new KeyListener() {
+        jTFWartosc.addKeyListener(new KeyListener() {
             @Override            
             public void keyTyped(KeyEvent e) {   
                 char ch = e.getKeyChar();
-                if(ch == '0' || ch == '1' || ch == '2' || ch == '3' || ch == '4' || ch == '5' || ch == '6' || ch == '7' || ch == '8' || ch == '9'){
-                    System.out.println("NACIŚNIĘTO CYFRĘ "+ch);
-                }                
+                if(ch >= '0' && ch <= '9' || ch == KeyEvent.VK_BACK_SPACE){
+                    jTFWartosc.setEditable(true);
+//                    System.out.println("NACIŚNIĘTO CYFRĘ "+ch);
+                } else{                
+                    jTFWartosc.setEditable(false);                
+                }           
             }            
             @Override
             public void keyPressed(KeyEvent e) {
@@ -278,15 +281,35 @@ public class NewJFrame extends javax.swing.JFrame {
             }
             @Override
             public void keyReleased(KeyEvent e) {
-                //System.out.println("3 keyReleased"+e.getKeyChar());
+//                System.out.println("3 keyReleased"+e.getKeyChar());
+            }
+        });
+    }
+    
+    private void addKeyListenerTojTFData(){
+        jTFData.addKeyListener(new KeyListener() {
+            @Override            
+            public void keyTyped(KeyEvent e) {   
+                char ch = e.getKeyChar();
+                if(ch >= '0' && ch <= '9' || ch == KeyEvent.VK_BACK_SPACE){
+                    jTFData.setEditable(true);
+//                    System.out.println("NACIŚNIĘTO CYFRĘ "+ch);
+                } else{                
+                    jTFData.setEditable(false);                
+                }           
+            }            
+            @Override
+            public void keyPressed(KeyEvent e) {
+                
+            }
+            @Override
+            public void keyReleased(KeyEvent e) {
+//                System.out.println("3 keyReleased"+e.getKeyChar());
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextArea az_jTATodaysShopping;
-    private javax.swing.JTextField az_jTFCoKupiles;
-    private javax.swing.JTextField az_jTFWartosc;
     private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
@@ -302,8 +325,11 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTATodaysShopping;
+    private javax.swing.JTextField jTFCoKupiles;
+    private javax.swing.JTextField jTFData;
+    private javax.swing.JTextField jTFWartosc;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     // End of variables declaration//GEN-END:variables
