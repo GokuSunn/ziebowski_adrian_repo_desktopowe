@@ -224,7 +224,8 @@ public class NewJFrame extends javax.swing.JFrame {
         zapis();
         jTFCoKupiles.setText(" ");
         jTFWartosc.setText(" ");
-        jTFData.setText(" ");        
+        jTFData.setText(" ");    
+        //brakuje ustawienia item w Combobox
     }//GEN-LAST:event_jBSaveActionPerformed
 
     /**
@@ -341,10 +342,8 @@ public class NewJFrame extends javax.swing.JFrame {
         
         String gettext = jTATodaysShopping.getText();
         
-        jTATodaysShopping.setText(gettext+"Kupiłeś: "+zapis1+" | "+"Typ twojego towaru: "+zapis4+" | "+"Wydałeś: "+zapis2+"zł"+" | "+"Data: "+zapis3+"\n");
+        jTATodaysShopping.setText(gettext+"Kupiłeś: "+zapis1+" | "+"Typ twojego towaru: "+zapis4+" | "+"Wydałeś: "+zapis2+"zł"+" | "+"Data: "+zapis3+"\n");              
         
-        //("Kupiłeś: "+zapis1+" / "+"Typ twojego towaru: "+zapis4+" / "+"Wydałeś: "+zapis2+"zł"+" / "+"Data: "+zapis3)
-    
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
