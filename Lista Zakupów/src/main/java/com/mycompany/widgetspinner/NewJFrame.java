@@ -21,7 +21,7 @@ public class NewJFrame extends javax.swing.JFrame {
         initComponents();
         addKeyListenerTojTFCoKupiles();
         addKeyListenerToTFWartosc();
-        addKeyListenerTojTFData();
+        addKeyListenerTojTFData();        
         
     }
 
@@ -267,12 +267,11 @@ public class NewJFrame extends javax.swing.JFrame {
         jTFCoKupiles.addKeyListener(new KeyListener() {
             @Override            
             public void keyTyped(KeyEvent e) {                
-                
-                if(e.getKeyChar()==KeyEvent.VK_ENTER){
-                    System.out.print("Wprowadzono dane po naciśnięciu ENTERA");
-                    jTATodaysShopping.setText(jTFCoKupiles.getText());
+                char ch = e.getKeyChar();
+                if(ch == KeyEvent.VK_ENTER || ch >= 'A' && ch <= 'Z' || ch >= 'a' && ch <= 'z' || ch == KeyEvent.VK_SPACE){
+                    jTFCoKupiles.setEditable(true);
                 }
-                System.out.println("1 keyTyped "+e.getKeyChar());
+                jTFCoKupiles.setEditable(false);
             }
 
             @Override
@@ -313,13 +312,18 @@ public class NewJFrame extends javax.swing.JFrame {
     private void addKeyListenerTojTFData(){
         jTFData.addKeyListener(new KeyListener() {
             @Override            
-            public void keyTyped(KeyEvent e) {   
+            public void keyTyped(KeyEvent e) {
+                String temp = jTFData.getText();
                 char ch = e.getKeyChar();
-                if(ch >= '0' && ch <= '9'|| ch == KeyEvent.VK_BACK_SPACE || ch == KeyEvent.VK_MINUS){
+                if((ch >= '0' && ch <= '9' || ch==KeyEvent.VK_BACK_SPACE) &&
+                        (temp.length() < 10 || ch==KeyEvent.VK_BACK_SPACE)){
                     jTFData.setEditable(true);
-                } else{                
-                    jTFData.setEditable(false);                
-                }           
+                    if((temp.length() == 4 || temp.length() == 7) && ch != KeyEvent.VK_BACK_SPACE){
+                        jTFData.setText(temp+"-");
+                    }
+                }else{
+                    jTFData.setEditable(false);
+                }
             }            
             @Override
             public void keyPressed(KeyEvent e) {
@@ -330,7 +334,7 @@ public class NewJFrame extends javax.swing.JFrame {
 
             }
         });
-    }    
+    }             
     
     
     private  void zapis(){
