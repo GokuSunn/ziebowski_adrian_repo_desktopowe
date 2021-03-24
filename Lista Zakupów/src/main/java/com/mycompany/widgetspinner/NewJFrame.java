@@ -21,8 +21,8 @@ public class NewJFrame extends javax.swing.JFrame {
         initComponents();
         addKeyListenerTojTFCoKupiles();
         addKeyListenerToTFWartosc();
-        addKeyListenerTojTFData();        
-        
+        addKeyListenerTojTFData();
+        addTooltipToElements();
     }
 
     /**
@@ -291,12 +291,27 @@ public class NewJFrame extends javax.swing.JFrame {
             @Override            
             public void keyTyped(KeyEvent e) {   
                 char ch = e.getKeyChar();
-                if(ch >= '0' && ch <= '9' || ch == KeyEvent.VK_BACK_SPACE){
-                    jTFWartosc.setEditable(true);
-//                    System.out.println("NACIŚNIĘTO CYFRĘ "+ch);
-                } else{                
-                    jTFWartosc.setEditable(false);                
-                }           
+                String temp = jTFWartosc.getText();
+                
+                System.out.println(temp.indexOf(','));
+                
+                if(temp.contains(",")){
+                    if(ch >= '0' && ch <= '9' || ch == KeyEvent.VK_BACK_SPACE){
+                        jTFWartosc.setEditable(true);//                    
+                    } else{                
+                        jTFWartosc.setEditable(false);                
+                    }    
+                
+                }else{
+                    
+                    if(ch >= '0' && ch <= '9' || ch == KeyEvent.VK_BACK_SPACE || ch == '.'){     
+                        jTFWartosc.setEditable(true);
+                    }else{
+                    
+                        jTFWartosc.setEditable(false);
+                    }
+                   
+                }    
             }            
             @Override
             public void keyPressed(KeyEvent e) {
@@ -348,6 +363,29 @@ public class NewJFrame extends javax.swing.JFrame {
         
         jTATodaysShopping.setText(gettext+"Kupiłeś: "+zapis1+" | "+"Typ twojego towaru: "+zapis4+" | "+"Wydałeś: "+zapis2+"zł"+" | "+"Data: "+zapis3+"\n");              
         
+    }
+    
+    private void addTooltipToElements(){
+        jTFCoKupiles.setToolTipText("<html>"
+            +"<h3>Wprowadz tekst</h3>"
+            +"<p>Nie uzywaj polskich znakow</p>"
+            +"</html>"
+        );
+        jTFData.setToolTipText("<html>"
+                +"<h3>Wprowadz date</h3>"
+                +"<p>0000.00.00</p>"
+                +"</html>"
+        );
+        jTFWartosc.setToolTipText("<html>"
+                + "<h3>Wprowadz wartosc"
+                + "<p>00.00</p>"
+                + "</html>"
+        );
+        
+        jTATodaysShopping.setToolTipText("<html>"
+                +"<img src='D:\\Files\\Images\\Saved\\commit.png>'"
+                +"</html>"
+        );
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
