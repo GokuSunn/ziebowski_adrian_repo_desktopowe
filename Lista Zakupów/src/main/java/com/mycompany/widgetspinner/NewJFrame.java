@@ -7,6 +7,11 @@ package com.mycompany.widgetspinner;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.Scanner;
+import java.util.logging.Level;
 
 /**
  *
@@ -43,7 +48,7 @@ public class NewJFrame extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jTFData = new javax.swing.JTextField();
-        jCBItem = new javax.swing.JComboBox<>();
+        jComboBoxType = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
         jBSave = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
@@ -75,10 +80,10 @@ public class NewJFrame extends javax.swing.JFrame {
 
         jLabel4.setText("Data");
 
-        jCBItem.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jCBItem.addActionListener(new java.awt.event.ActionListener() {
+        jComboBoxType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBoxType.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCBItemActionPerformed(evt);
+                jComboBoxTypeActionPerformed(evt);
             }
         });
 
@@ -132,7 +137,7 @@ public class NewJFrame extends javax.swing.JFrame {
                             .addGap(22, 22, 22)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jCBItem, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(jComboBoxType, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGap(38, 38, 38)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabel4)
@@ -153,7 +158,7 @@ public class NewJFrame extends javax.swing.JFrame {
                     .addComponent(jTFCoKupiles, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTFWartosc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTFData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jCBItem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jComboBoxType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(33, 33, 33)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel5)
@@ -216,9 +221,9 @@ public class NewJFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTFWartoscActionPerformed
 
-    private void jCBItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCBItemActionPerformed
+    private void jComboBoxTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxTypeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCBItemActionPerformed
+    }//GEN-LAST:event_jComboBoxTypeActionPerformed
 
     private void jBSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBSaveActionPerformed
         zapis();
@@ -357,11 +362,11 @@ public class NewJFrame extends javax.swing.JFrame {
         String zapis1 = jTFCoKupiles.getText();
         String zapis2 = jTFWartosc.getText();
         String zapis3 = jTFData.getText();
-        String zapis4 = (String) jCBItem.getSelectedItem();
+        String zapis4 = (String) jComboBoxType.getSelectedItem();
         
         String gettext = jTATodaysShopping.getText();
         
-        jTATodaysShopping.setText(gettext+"Kupiłeś: "+zapis1+" | "+"Typ twojego towaru: "+zapis4+" | "+"Wydałeś: "+zapis2+"zł"+" | "+"Data: "+zapis3+"\n");              
+        jTATodaysShopping.setText(gettext+"Kupiłeś: "+zapis1+"\n"+"Typ twojego towaru: "+zapis4+"\n"+"Wydałeś: "+zapis2+"zł"+"\n"+"Data: "+zapis3+"\n");              
         
     }
     
@@ -387,10 +392,26 @@ public class NewJFrame extends javax.swing.JFrame {
                 +"</html>"
         );
     }
+    
+    /*private void filljCBProducts()
+    {
+        ArticleTypeUtils atu = new ArticleTypeUtils();
+        jComboBoxType.removeAllItems();
+        try {
+            Scanner sc = new Scanner (new File("produkty.txt"));
+            while(sc.hasNext()){
+                String item = sc.nextLine();
+                jComboBoxType.addItem(item);
+            }
+        }catch (FileNotFoundException ex) {
+            System.out.println(ex);
+        }
+    }
+    */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBSave;
-    private javax.swing.JComboBox<String> jCBItem;
+    private javax.swing.JComboBox<String> jComboBoxType;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
