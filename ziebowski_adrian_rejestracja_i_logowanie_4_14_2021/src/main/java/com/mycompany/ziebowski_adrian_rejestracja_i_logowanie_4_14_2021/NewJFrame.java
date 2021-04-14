@@ -27,21 +27,162 @@ public class NewJFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jPanel1 = new javax.swing.JPanel();
+        az_jLabelRegister = new javax.swing.JLabel();
+        az_jLabelUsername = new javax.swing.JLabel();
+        az_jTextFieldUserName = new javax.swing.JTextField();
+        az_jLabelEmail = new javax.swing.JLabel();
+        az_jTextFieldEmail = new javax.swing.JTextField();
+        az_jLabelPassword = new javax.swing.JLabel();
+        az_jLabelConfPass = new javax.swing.JLabel();
+        az_jButtonRegister = new javax.swing.JButton();
+        az_jButtonPolish = new javax.swing.JButton();
+        az_jButtonEnglish = new javax.swing.JButton();
+        jPasswordField2 = new javax.swing.JPasswordField();
+        jPasswordField3 = new javax.swing.JPasswordField();
+        jPanel2 = new javax.swing.JPanel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jTabbedPane1.setBackground(new java.awt.Color(255, 255, 255));
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        az_jLabelRegister.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        az_jLabelRegister.setText("Rejestracja");
+
+        az_jLabelUsername.setText("Nazwa Użytkownika");
+
+        az_jTextFieldUserName.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
+
+        az_jLabelEmail.setText("E-mail");
+
+        az_jTextFieldEmail.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
+
+        az_jLabelPassword.setText("Hasło");
+
+        az_jLabelConfPass.setText("Potwierdz Hasło");
+
+        az_jButtonRegister.setBackground(new java.awt.Color(255, 255, 255));
+        az_jButtonRegister.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        az_jButtonRegister.setText("Rejestracja");
+
+        az_jButtonPolish.setText("Pl");
+        az_jButtonPolish.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                az_jButtonPolishActionPerformed(evt);
+            }
+        });
+
+        az_jButtonEnglish.setText("Eng");
+        az_jButtonEnglish.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                az_jButtonEnglishActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(az_jTextFieldUserName)
+                    .addComponent(az_jTextFieldEmail, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(az_jLabelRegister)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 499, Short.MAX_VALUE)
+                        .addComponent(az_jButtonEnglish)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(az_jButtonPolish))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(az_jButtonRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(az_jLabelUsername)
+                            .addComponent(az_jLabelEmail)
+                            .addComponent(az_jLabelPassword)
+                            .addComponent(az_jLabelConfPass))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jPasswordField3))
+                .addContainerGap())
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jPasswordField2)
+                    .addContainerGap()))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(az_jLabelRegister)
+                    .addComponent(az_jButtonPolish)
+                    .addComponent(az_jButtonEnglish))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(az_jLabelUsername)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(az_jTextFieldUserName, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(az_jLabelEmail)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(az_jTextFieldEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(13, 13, 13)
+                .addComponent(az_jLabelPassword)
+                .addGap(60, 60, 60)
+                .addComponent(az_jLabelConfPass)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPasswordField3, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addComponent(az_jButtonRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addContainerGap(212, Short.MAX_VALUE)
+                    .addComponent(jPasswordField2, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(152, 152, 152)))
+        );
+
+        jTabbedPane1.addTab("Rejestracja", jPanel1);
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 695, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 376, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("Logowanie", jPanel2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void az_jButtonEnglishActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_az_jButtonEnglishActionPerformed
+        setEnglish();
+    }//GEN-LAST:event_az_jButtonEnglishActionPerformed
+
+    private void az_jButtonPolishActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_az_jButtonPolishActionPerformed
+        setPolish();
+    }//GEN-LAST:event_az_jButtonPolishActionPerformed
 
     /**
      * @param args the command line arguments
@@ -77,7 +218,40 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         });
     }
+    
+    public void setEnglish()
+    {
+        az_jLabelUsername.setText("Username");
+        az_jLabelPassword.setText("Password");
+        az_jLabelConfPass.setText("Confirm Password");
+        az_jButtonRegister.setText("Registration");
+        az_jLabelRegister.setText("Registration");
+    }
+    
+    public void setPolish()
+    {
+        az_jLabelUsername.setText("Nazwa użytkownika");
+        az_jLabelPassword.setText("Hasło");
+        az_jLabelConfPass.setText("Potwierdz Hasło");
+        az_jButtonRegister.setText("Rejestracja");
+        az_jLabelRegister.setText("Rejestracja");
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton az_jButtonEnglish;
+    private javax.swing.JButton az_jButtonPolish;
+    private javax.swing.JButton az_jButtonRegister;
+    private javax.swing.JLabel az_jLabelConfPass;
+    private javax.swing.JLabel az_jLabelEmail;
+    private javax.swing.JLabel az_jLabelPassword;
+    private javax.swing.JLabel az_jLabelRegister;
+    private javax.swing.JLabel az_jLabelUsername;
+    private javax.swing.JTextField az_jTextFieldEmail;
+    private javax.swing.JTextField az_jTextFieldUserName;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPasswordField jPasswordField2;
+    private javax.swing.JPasswordField jPasswordField3;
+    private javax.swing.JTabbedPane jTabbedPane1;
     // End of variables declaration//GEN-END:variables
 }
