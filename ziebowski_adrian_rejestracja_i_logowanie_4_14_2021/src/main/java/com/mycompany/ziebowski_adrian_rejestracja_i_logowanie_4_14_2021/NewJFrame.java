@@ -5,6 +5,8 @@
  */
 package com.mycompany.ziebowski_adrian_rejestracja_i_logowanie_4_14_2021;
 
+import java.util.Scanner;
+
 /**
  *
  * @author adrik
@@ -39,9 +41,16 @@ public class NewJFrame extends javax.swing.JFrame {
         az_jButtonRegister = new javax.swing.JButton();
         az_jButtonPolish = new javax.swing.JButton();
         az_jButtonEnglish = new javax.swing.JButton();
-        jPasswordField2 = new javax.swing.JPasswordField();
-        jPasswordField3 = new javax.swing.JPasswordField();
+        az_jPasswordField2 = new javax.swing.JPasswordField();
+        az_jPasswordField3 = new javax.swing.JPasswordField();
+        az_jLabelWrong = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
+        az_jLabelLogin = new javax.swing.JLabel();
+        az_jLabelMail = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        az_jLabelPass = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
+        az_jButtonSingIn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -55,6 +64,11 @@ public class NewJFrame extends javax.swing.JFrame {
         az_jLabelUsername.setText("Nazwa Użytkownika");
 
         az_jTextFieldUserName.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
+        az_jTextFieldUserName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                az_jTextFieldUserNameActionPerformed(evt);
+            }
+        });
 
         az_jLabelEmail.setText("E-mail");
 
@@ -65,9 +79,16 @@ public class NewJFrame extends javax.swing.JFrame {
         az_jLabelConfPass.setText("Potwierdz Hasło");
 
         az_jButtonRegister.setBackground(new java.awt.Color(255, 255, 255));
-        az_jButtonRegister.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        az_jButtonRegister.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         az_jButtonRegister.setText("Rejestracja");
+        az_jButtonRegister.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                az_jButtonRegisterActionPerformed(evt);
+            }
+        });
 
+        az_jButtonPolish.setBackground(new java.awt.Color(102, 102, 102));
+        az_jButtonPolish.setForeground(new java.awt.Color(255, 255, 255));
         az_jButtonPolish.setText("Pl");
         az_jButtonPolish.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -75,12 +96,18 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         });
 
+        az_jButtonEnglish.setBackground(new java.awt.Color(102, 102, 102));
+        az_jButtonEnglish.setForeground(new java.awt.Color(255, 255, 255));
         az_jButtonEnglish.setText("Eng");
         az_jButtonEnglish.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 az_jButtonEnglishActionPerformed(evt);
             }
         });
+
+        az_jLabelWrong.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
+        az_jLabelWrong.setForeground(new java.awt.Color(255, 102, 102));
+        az_jLabelWrong.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -97,20 +124,23 @@ public class NewJFrame extends javax.swing.JFrame {
                         .addComponent(az_jButtonEnglish)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(az_jButtonPolish))
+                    .addComponent(az_jPasswordField3)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(az_jButtonRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(az_jLabelUsername)
                             .addComponent(az_jLabelEmail)
                             .addComponent(az_jLabelPassword)
                             .addComponent(az_jLabelConfPass))
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jPasswordField3))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(az_jButtonRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(az_jLabelWrong, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(jPasswordField2)
+                    .addComponent(az_jPasswordField2)
                     .addContainerGap()))
         );
         jPanel1Layout.setVerticalGroup(
@@ -134,14 +164,16 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addGap(60, 60, 60)
                 .addComponent(az_jLabelConfPass)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPasswordField3, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
-                .addComponent(az_jButtonRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(az_jPasswordField3, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(az_jLabelWrong, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(az_jButtonRegister, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE))
                 .addContainerGap())
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                     .addContainerGap(212, Short.MAX_VALUE)
-                    .addComponent(jPasswordField2, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(az_jPasswordField2, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(152, 152, 152)))
         );
 
@@ -149,15 +181,51 @@ public class NewJFrame extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
+        az_jLabelLogin.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        az_jLabelLogin.setText("Logowanie");
+
+        az_jLabelMail.setText("E-mail");
+
+        az_jLabelPass.setText("Hasło");
+
+        az_jButtonSingIn.setBackground(new java.awt.Color(255, 255, 255));
+        az_jButtonSingIn.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        az_jButtonSingIn.setText("Sing In");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 695, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextField1)
+                    .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(az_jButtonSingIn, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(az_jLabelLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(az_jLabelMail)
+                            .addComponent(az_jLabelPass))
+                        .addGap(0, 502, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 376, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(az_jLabelLogin)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(az_jLabelMail)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(az_jLabelPass)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(az_jButtonSingIn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(169, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Logowanie", jPanel2);
@@ -183,6 +251,14 @@ public class NewJFrame extends javax.swing.JFrame {
     private void az_jButtonPolishActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_az_jButtonPolishActionPerformed
         setPolish();
     }//GEN-LAST:event_az_jButtonPolishActionPerformed
+
+    private void az_jTextFieldUserNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_az_jTextFieldUserNameActionPerformed
+        
+    }//GEN-LAST:event_az_jTextFieldUserNameActionPerformed
+
+    private void az_jButtonRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_az_jButtonRegisterActionPerformed
+        if(az_jTextFieldUserName.getText().length() > 20 || az_jTextFieldUserName.getText().length() < 2)az_jLabelWrong.setText("Długość nazwy użytkownika jest zła (min 2, max 20) popraw to.");        
+    }//GEN-LAST:event_az_jButtonRegisterActionPerformed
 
     /**
      * @param args the command line arguments
@@ -226,6 +302,10 @@ public class NewJFrame extends javax.swing.JFrame {
         az_jLabelConfPass.setText("Confirm Password");
         az_jButtonRegister.setText("Registration");
         az_jLabelRegister.setText("Registration");
+        az_jLabelLogin.setText("Sing in");
+        az_jLabelPass.setText("Password");
+        az_jButtonSingIn.setText("Sing in");
+        if(az_jLabelWrong.getText().length() > 2) az_jLabelWrong.setText("Your username length is valid (min 2, max 20) change this!");
     }
     
     public void setPolish()
@@ -235,23 +315,40 @@ public class NewJFrame extends javax.swing.JFrame {
         az_jLabelConfPass.setText("Potwierdz Hasło");
         az_jButtonRegister.setText("Rejestracja");
         az_jLabelRegister.setText("Rejestracja");
+        az_jLabelLogin.setText("Logowanie");
+        az_jLabelPass.setText("Hasło");
+        az_jButtonSingIn.setText("Logowanie");
+        if(az_jLabelWrong.getText().length() > 2) az_jLabelWrong.setText("Długość nazwy użytkownika jest zła (min 2, max 20) popraw to.");
+    }   
+    
+    
+    public void saveToFile()
+    {
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton az_jButtonEnglish;
     private javax.swing.JButton az_jButtonPolish;
     private javax.swing.JButton az_jButtonRegister;
+    private javax.swing.JButton az_jButtonSingIn;
     private javax.swing.JLabel az_jLabelConfPass;
     private javax.swing.JLabel az_jLabelEmail;
+    private javax.swing.JLabel az_jLabelLogin;
+    private javax.swing.JLabel az_jLabelMail;
+    private javax.swing.JLabel az_jLabelPass;
     private javax.swing.JLabel az_jLabelPassword;
     private javax.swing.JLabel az_jLabelRegister;
     private javax.swing.JLabel az_jLabelUsername;
+    private javax.swing.JLabel az_jLabelWrong;
+    private javax.swing.JPasswordField az_jPasswordField2;
+    private javax.swing.JPasswordField az_jPasswordField3;
     private javax.swing.JTextField az_jTextFieldEmail;
     private javax.swing.JTextField az_jTextFieldUserName;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPasswordField jPasswordField2;
-    private javax.swing.JPasswordField jPasswordField3;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }
