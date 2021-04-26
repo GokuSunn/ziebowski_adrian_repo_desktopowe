@@ -1,0 +1,6 @@
+Nazwa U?ytkownika
+Has?o
+Potwierdz Has?o
+Rejestracja
+Logowanie
+Has?o

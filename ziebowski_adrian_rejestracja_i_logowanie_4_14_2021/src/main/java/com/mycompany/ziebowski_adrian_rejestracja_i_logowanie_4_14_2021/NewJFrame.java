@@ -5,6 +5,11 @@
  */
 package com.mycompany.ziebowski_adrian_rejestracja_i_logowanie_4_14_2021;
 
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 
 /**
@@ -18,6 +23,7 @@ public class NewJFrame extends javax.swing.JFrame {
      */
     public NewJFrame() {
         initComponents();
+        addKeyListenerToaz_jTextFieldUserName();
     }
 
     /**
@@ -257,7 +263,8 @@ public class NewJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_az_jTextFieldUserNameActionPerformed
 
     private void az_jButtonRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_az_jButtonRegisterActionPerformed
-        if(az_jTextFieldUserName.getText().length() > 20 || az_jTextFieldUserName.getText().length() < 2)az_jLabelWrong.setText("Długość nazwy użytkownika jest zła (min 2, max 20) popraw to.");        
+        if(az_jTextFieldUserName.getText().length() > 20 || az_jTextFieldUserName.getText().length() < 2)az_jLabelWrong.setText("Długość nazwy użytkownika jest zła (min 2, max 20) popraw to.");    
+        Zapis();
     }//GEN-LAST:event_az_jButtonRegisterActionPerformed
 
     /**
@@ -322,10 +329,57 @@ public class NewJFrame extends javax.swing.JFrame {
     }   
     
     
-    public void saveToFile()
-    {
+        private void Zapis(){
+        try{
         
-    }
+            File f = new File("zapis.txt");
+            FileWriter fw = new FileWriter(f);
+            
+            String a = az_jTextFieldUserName.getText();
+            String b = az_jTextFieldEmail.getText();
+            String c = az_jPasswordField2.getText();            
+            String e = az_jPasswordField3.getText();
+            
+            String g = jTextField1.getText();
+            String h = jTextField2.getText();            
+
+            fw.write(""+a);
+            fw.write("\n"+b);
+            fw.write("\n"+c);
+            fw.write("\n"+e);
+            fw.write("\n");
+            fw.write("\n"+g);
+            fw.write("\n"+h);                        
+            fw.close();
+        
+        }catch(IOException e){
+            System.out.println("BŁĄD");
+        }
+    }  
+        
+    private void addKeyListenerToaz_jTextFieldUserName(){
+        az_jTextFieldUserName.addKeyListener(new KeyListener() {
+            @Override            
+            public void keyTyped(KeyEvent e){
+                String temp = az_jTextFieldUserName.getText();
+                char ch = e.getKeyChar();
+                if((ch >= 'a' && ch <= 'z' || ch==KeyEvent.VK_BACK_SPACE) &&
+                        (temp.length() < 20 || temp.length() > 2 || ch==KeyEvent.VK_BACK_SPACE)){
+                    az_jTextFieldUserName.setEditable(true);             
+                }else{
+                    az_jTextFieldUserName.setEditable(false);
+                }
+            }
+            @Override
+            public void keyPressed(KeyEvent e) {
+                
+            }
+            @Override
+            public void keyReleased(KeyEvent e) {
+
+            }
+        });
+    } 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton az_jButtonEnglish;
