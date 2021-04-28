@@ -10,6 +10,7 @@ import java.awt.event.KeyListener;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -24,6 +25,7 @@ public class NewJFrame extends javax.swing.JFrame {
     public NewJFrame() {
         initComponents();
         addKeyListenerToaz_jTextFieldUserName();
+        password();
     }
 
     /**
@@ -337,19 +339,19 @@ public class NewJFrame extends javax.swing.JFrame {
             
             String a = az_jTextFieldUserName.getText();
             String b = az_jTextFieldEmail.getText();
-            String c = az_jPasswordField2.getText();            
-            String e = az_jPasswordField3.getText();
+            char[] c = az_jPasswordField2.getPassword();            
+            char[] e = az_jPasswordField3.getPassword();
             
             String g = jTextField1.getText();
             String h = jTextField2.getText();            
 
-            fw.write(""+a);
-            fw.write("\n"+b);
-            fw.write("\n"+c);
-            fw.write("\n"+e);
+            fw.write("Name: "+a);
+            fw.write("\nEmail: "+b);
+            fw.write("\nPassword: "+Arrays.toString(c));
+            fw.write("\nConfirm Password: "+Arrays.toString(e));
             fw.write("\n");
-            fw.write("\n"+g);
-            fw.write("\n"+h);                        
+            fw.write("\nLogin: "+g);
+            fw.write("\nPass: "+h);                        
             fw.close();
         
         }catch(IOException e){
@@ -363,7 +365,7 @@ public class NewJFrame extends javax.swing.JFrame {
             public void keyTyped(KeyEvent e){
                 String temp = az_jTextFieldUserName.getText();
                 char ch = e.getKeyChar();
-                if((ch >= 'a' && ch <= 'z' || ch==KeyEvent.VK_BACK_SPACE) &&
+                if((ch >= 'a' && ch <= 'z' || ch>= 'A' && ch<= 'Z' || ch==KeyEvent.VK_BACK_SPACE) &&
                         (temp.length() < 20 || temp.length() > 2 || ch==KeyEvent.VK_BACK_SPACE)){
                     az_jTextFieldUserName.setEditable(true);             
                 }else{
@@ -379,7 +381,7 @@ public class NewJFrame extends javax.swing.JFrame {
 
             }
         });
-    } 
+    }    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton az_jButtonEnglish;
